@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Lobby {{ lobby }}</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+    <h1>Lobby {{ lobby }}</h1>
+    <p>You are {{ pid }}</p>
+
+    {% for p, stats in world.players.items() %}
+        <div class="status">
+            {{ p }} ❤️ {{ stats.health }} ⚡ {{ stats.stamina }}
+        </div>
+    {% endfor %}
+
+    <img src="{{ url_for('static', filename='images/' + world.image) }}">
+
+    <div class="game-log">
+        {% for line in world.log %}
+            <div>{{ line }}</div>
+        {% endfor %}
+    </div>
+
+    {% if not world.game_over %}
+    <form method="post">
+        <input name="command" placeholder="explore / inventory">
+    </form>
+    {% else %}
+        <h2>🎉 GAME FINISHED — ALL PLAYERS WIN</h2>
+    {% endif %}
+</body>
+</html>

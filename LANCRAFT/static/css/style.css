@@ -1,0 +1,61 @@
+@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&family=Inter:wght@400;600&display=swap');
+
+body {
+    margin: 0;
+    background: #d6eaf0;
+    font-family: 'Inter', sans-serif;
+    text-align: center;
+}
+
+h1 {
+    font-family: 'Press Start 2P', monospace;
+    font-size: 38px;
+    margin-top: 60px;
+    color: #145a32;
+}
+
+button, .btn {
+    display: block;
+    width: 320px;
+    margin: 15px auto;
+    padding: 16px;
+    font-size: 20px;
+    border-radius: 10px;
+    border: none;
+    text-decoration: none;
+    color: white;
+    font-weight: 600;
+}
+
+.play { background: #1e8449; }
+.manual { background: #f39c12; color: black; }
+.exit { background: #c0392b; }
+
+.game-log {
+    width: 75%;
+    margin: 20px auto;
+    padding: 20px;
+    background: white;
+    text-align: left;
+    font-size: 18px;
+    border-radius: 8px;
+}
+
+.status {
+    font-size: 18px;
+    font-weight: 600;
+}
+
+input {
+    width: 75%;
+    padding: 14px;
+    font-size: 18px;
+    border-radius: 6px;
+    border: 2px solid #777;
+}
+
+img {
+    width: 260px;
+    margin: 20px;
+    border-radius: 14px;
+}

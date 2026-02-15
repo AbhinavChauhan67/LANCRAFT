@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Multiplayer</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+    <h1>LAN Multiplayer</h1>
+
+    <a class="btn play" href="/create_lobby">Create Lobby</a>
+
+    <form method="post" action="/join_lobby">
+        <input name="lobby" placeholder="Enter Lobby ID">
+        <button class="btn manual">Join Lobby</button>
+    </form>
+
+    <a class="btn exit" href="/">Back</a>
+</body>
+</html>

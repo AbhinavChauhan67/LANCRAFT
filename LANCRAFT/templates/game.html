@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>LANCRAFT</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+    <h1>LANCRAFT</h1>
+
+    <div class="status">
+        ❤️ Health: {{ session.health }} |
+        ⚡ Stamina: {{ session.stamina }}
+    </div>
+
+    <img src="{{ url_for('static', filename='images/' + session.image) }}">
+
+    <div class="game-log">
+        {% for line in session.log %}
+            <div>{{ line }}</div>
+        {% endfor %}
+    </div>
+
+    {% if not session.game_over %}
+    <form method="post">
+        <input name="command" placeholder="Enter command..." autofocus>
+    </form>
+    {% else %}
+        <p><b>Game Over</b></p>
+        <p>Type <b>restart</b> to play again</p>
+    {% endif %}
+</body>
+</html>
